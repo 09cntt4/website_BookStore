@@ -1,0 +1,13 @@
+﻿@using BookStore.Models;
+@model List<KHACHHANG>
+@{
+    ViewBag.Title = "Logout";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (Session["Tendn"] != null)
+            {
+                    <p>name:@Session["user"].ToString()</p>
+                  
+            }
+

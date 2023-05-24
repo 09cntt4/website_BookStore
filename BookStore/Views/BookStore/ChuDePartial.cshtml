@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<BookStore.Models.CHUDE>
+
+
+@{
+    foreach (var item in Model)
+    {
+
+
+    <li>
+        <a href="@Url.Action("SPTheochude", "BookStore", new { Macd = item.MaCD })">
+            @item.TenChuDe
+        </a>
+    </li>
+
+
+
+
+
+    }
+}         

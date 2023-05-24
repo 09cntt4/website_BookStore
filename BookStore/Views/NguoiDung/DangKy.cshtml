@@ -1,0 +1,101 @@
+﻿@using BookStore.Models
+@model KHACHHANG
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+}
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="login-register-form pt-70 pb-70">
+        <div class="container">
+            <div class="row">
+                <h3>Đăng ký thành viên</h3>
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.Taikhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.Taikhoan, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Taikhoan, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.Matkhau, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.Matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Matkhau, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.DiachiKH, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.DiachiKH, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DiachiKH, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.DienthoaiKH, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.DienthoaiKH, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DienthoaiKH, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-3">
+                    @Html.LabelFor(model => model.Ngaysinh, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="login-register-form-full">
+                        @Html.EditorFor(model => model.Ngaysinh, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ngaysinh, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 offset-lg-3">
+                    <button class="button-1" type="submit">Dăng ký</button>
+                    <button class="button-1" type="submit">
+                        @Html.ActionLink("Trở lại", "Index", "BookStore")
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+}
+

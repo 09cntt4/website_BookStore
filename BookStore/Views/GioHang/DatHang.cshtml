@@ -1,0 +1,152 @@
+﻿@using BookStore.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Đơn Đặt hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="margin-left:300px;margin-top:20px; margin-bottom: -10px;"> Thông tin hàng hóa</h2>
+<!-- Start Chekout Page -->
+<section class="checkout-page-wrapper pt-70 pb-70">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-6">
+                <div class="order-summary-details">
+                    <h2>Tóm tắt đơn hàng của bạn</h2>
+                    <div class="order-summary-content">
+                        <div class="order-summary-table table-responsive text-center">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Các sản phẩm </th>
+                                        <th>Tổng cộng</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @{foreach (var item in Model)
+                                            {
+                                                <td>
+                                                    <a href="#">@item.sTensach <strong>số lượng:@item.iSoluong </strong></a>
+                                                </td>
+                                                <td>@item.dThanhtien VNĐ</td>
+                                            }
+                                        }
+                                    </tr>
+
+
+                                </tbody>
+                                <tfoot>
+                                    
+                                    <tr>
+                                        <td>Tổng cộng</td>
+                                        <td><strong>@ViewBag.TongTien VNĐ</strong></td>
+                                    </tr>
+
+
+                                </tfoot>
+
+                            </table>
+
+
+                            @{
+                                KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+                            }
+                            <table class="table table-bordered">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.ValidationSummary(true)
+
+
+
+
+                                    <h2 style="margin-left:100px;margin-top:20px; margin-bottom: -10px;"> Thông tin đặt hàng</h2>
+
+                                    <tbody>
+
+                                        <tr>
+
+                                            <td>Họ tên khách hàng </td>
+                                            <td>@kh.HoTen</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Địa chỉ: </strong>
+                                            </td>
+                                            <td>@kh.DiachiKH</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Điện thoại </strong>
+                                            </td>
+                                            <td>@kh.DienthoaiKH</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Ngày đặt </strong>
+                                            </td>
+                                            <td>
+                                                @DateTime.Now.ToShortDateString()
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Ngày Giao hàng </strong>
+                                            </td>
+                                            <td>
+                                                <input type="date" name="Ngaygiao" />
+                                            </td>
+
+                                        </tr>
+
+
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>chuyển hàng</td>
+                                            <td class="d-flex justify-content-left">
+                                                <ul class="shipping-type">
+
+                                                    <li>
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" id="freeshipping" name="shipping" class="custom-control-input">
+                                                            <label class="custom-control-label" for="freeshipping">
+                                                                Miễn phí vận chuyển
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng cộng</td>
+                                            <td><strong>@ViewBag.TongTien VNĐ</strong></td>
+                                        </tr>
+
+
+                                    </tfoot>
+
+                                }
+                            </table>
+                            <button class="button-1"> <a href="@Url.Action("Xacnhandonhang","GioHang")">xác nhận đặt hàng  </a></button>
+
+
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+</section>
+<!-- End Chekout Page -->
+
+

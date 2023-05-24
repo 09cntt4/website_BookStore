@@ -1,0 +1,153 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+
+@model PagedList.PagedList<BookStore.Models.SACH>
+
+@helper Truncate(String input,int length) { 
+    
+    if(input.Length<length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0,length)
+    }
+    
+    
+    }
+@{
+    ViewBag.Title = "QuanLySanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="card">
+            <h5 class="card-header">Bảng sản phẩm</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã sách</th>
+                            <th>Tên sách</th>
+                            <th>Giá bán</th>
+                            <th>Mô tả</th>
+                            <th>Ảnh bìa</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Số lượng tồn</th>
+                             <th></th>
+
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody class="table-border-bottom-0">
+                            <tr>
+                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong> @item.Masach</strong></td>
+                                <td>@item.Tensach</td>
+                                <td>@item.Giaban</td>
+                                <td>@Truncate(@item.Mota,100)</td>
+
+
+                                <td>
+                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+
+                                        <li data-bs-toggle="tooltip"
+                                            data-popup="tooltip-custom"
+                                            data-bs-placement="top"
+                                            class="avatar avatar-xs pull-up"
+                                            title="Christina Parker">
+                                            <img src="~/Content/img/@item.Anhbia" alt="@item.Tensach" class="rounded-circle"/>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td><span class="badge bg-label-primary me-1">@item.Ngaycapnhat</span></td>
+                                <td><span class="badge bg-label-primary me-1">@item.Soluongton</span></td>
+
+
+                                <td>
+                                      <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                          <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" >
+                                                <p>
+                                                    @Html.ActionLink("ThemMoiSach", "Create")"
+                                                </p>
+                                            </a>
+                                            <a class="dropdown-item" href=" @Url.Action( "Suasach","Admin", new {  id=item.Masach  })"><i class="bx bx-edit-alt me-1">Sửa</i></a>
+                                            <a class="dropdown-item" href=" @Url.Action( "Chitietsach","Admin", new {  id=item.Masach  })"><i class="bx bx-edit-alt me-1">Chi tiết</i></a>
+                                              <a class="dropdown-item" href=" @Url.Action("Xoasach", "Admin", new {  id=item.Masach })"><i class="bx bx-trash me-1"></i> Xóa</a>
+
+                                        </div>
+                                      </div>
+                                </td>
+
+                            </tr>
+
+
+
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+<span style="margin-left:800px; font-size:20px;">
+    Trang <span style="color:red;">@(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount</span>
+</span>
+
+<div class="center">
+    <div class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+
+    .center {
+        margin-left: 760px;
+        text-align: center;
+    }
+
+    .pagination {
+        /*display: inline-block;*/
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: yellowgreen;
+            }
+</style>
+
+
+
+

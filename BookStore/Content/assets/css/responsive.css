@@ -1,0 +1,265 @@
+@media (min-width: 1300px){
+	.about-content h3 {
+		font-size: 30px;
+	}
+	.about-content p {
+		font-size: 18px;
+		margin-bottom: 12px;
+		line-height: 30px;
+	}
+	.deal-product-slider-single-content .left .count-time ul li {
+		padding: 15px;
+		margin-bottom: 12px;
+	}
+}
+@media (max-width: 1299px){
+	.deal-product-slider-single-content .right p {
+		margin-bottom: 5px;
+		margin-top: 2px;
+		line-height: 26px;
+	}
+}
+@media (max-width: 1199px) {
+	.menu ul li ul.mega-sub-menu {
+		left: -500px;
+	}
+	.team-style-1 .content p {
+		line-height: 24px;
+	}
+	.team-style-1 .content {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+@media (min-width: 992px) {
+	.canvas_open {
+		display: none;
+	}
+	.logo-2 {
+		display: none;
+	}
+	.desktop-mini-cart {
+		display: block;
+	}
+	.mobile-mini-cart {
+		display: none;
+	}
+}
+@media (max-width: 991px) {
+	.logo{
+		display: none;
+	}
+	.desktop-mini-cart {
+		display: none;
+	}
+	.menu {
+		display: none;
+	}
+	.mobile-mini-cart {
+		height: 100%;
+	}
+	.logo-2 {
+		float: left;
+	}
+	.logo-2 h2{
+		font-size: 30px;
+		font-weight: 700;
+	}
+	.logo-2 h2 a{
+		color: #333;
+	}
+	.canvas_open {
+		float: right;
+		overflow: hidden;
+	}
+	.mobile-mini-cart {
+		float: right;
+		padding-right: 30px;
+	}
+	.header-bottm {
+		padding: 20px 0px;
+	}
+	.mini-cart-icon:hover .minicart-content-wrapper {
+		top: 63px;
+	}
+	.top-text {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.top-list {
+		text-align: center;
+	}
+	.about-content {
+		margin-top: 30px;
+	}
+	.canvas_open {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+	 
+}
+@media (max-width: 767px) {
+	.sales-banner .text-right {
+		float: left;
+		margin-top: 20px;
+	}
+	.breadcrumb-area {
+		padding: 50px 0px;
+	}
+	.modal_tab_img img{
+		width: auto;
+	}
+	.copyright-text {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.footer_payment {
+		text-align: center;
+	}
+	.product-tab-style.product-tab-style-1 .deal-title {
+		position: relative;
+		margin-top: 0px;
+		z-index: 1;
+	}
+	.product-tab-style.product-tab-style-1 ul {
+		text-align: left;
+	}
+	.hero-area-full .owl-nav .owl-prev {
+		left: 2px;
+	}
+	 
+	.hero-area-full .owl-nav .owl-next {
+		right: 2px;
+	}
+	 
+}
+
+@media (max-width: 576px) {
+	.header-search-form form .form-select {
+		width: 120px;
+	}
+	.header-search-form form input {
+		padding-left: 123px;
+	}
+	.hero-slider-single-content h2 {
+		font-size: 30px;
+	}
+	.hero-slider-single {
+		padding-top: 150px;
+		padding-bottom: 120px;
+	}
+	.pt-70.pb-40{
+		padding-top: 50px;
+		padding-bottom: 10px;
+	}
+	.section-headding h2 {
+		font-size: 24px;
+	}
+	.privacy-policy-content .active {
+		font-size: 16px;
+		margin: 12px 0;
+		padding: 11px 10px;
+	}
+	.blog-item .content p.active {
+		margin: 9px 0px 0px 0px;
+		padding: 15px;
+	}
+	.team-style-1 .team-thumbnail {
+		width: 100%;
+	}
+	.team-style-1 .content {
+		width: 100%;
+	}
+	.hero-area-full .owl-nav {
+		display: none;
+	}
+ 
+}
+@media (max-width: 450px) {
+	.minicart-content-wrapper {
+		width: 280px;
+		right: -73px;
+	}
+	.privacy-policy-content h3 {
+		font-size: 20px;
+	}
+	.privacy-policy-content {
+		padding: 30px 10px;
+	}
+	.blog-comment-list ul li.comment-single {
+		padding-left: 0px;
+	}
+	.blog-comment-list ul li.comment-single img {
+		position: inherit;
+		margin-bottom: 10px;
+	}
+	.mini-cart-icon i {
+		font-size: 28px;
+	}
+	.product-tab-style ul li .nav-link {
+		padding: 6px 18px;
+	}
+ 
+}
+@media (max-width: 400px){
+	.mobile-mini-cart {
+		padding-right: 5px;
+	}
+	.minicart-content-wrapper {
+		right: -50px;
+	}
+	.logo-2 img {
+		width: 155px;
+	}
+	.mini-cart-icon i {
+		font-size: 22px;
+	}
+	.mini-cart-icon .counter {
+		top: 8px;
+		left: 20px;
+		width: 20px;
+		height: 20px;
+		font-size: 9px;
+	}
+	.canvas_open a {
+		width: 30px;
+		height: 30px;
+		line-height: 33px;
+		font-size: 22px;
+	}
+	.mini-cart-icon .counter-cart {
+		display: block;
+		font-size: 12px;
+		font-weight: 600;
+		padding-left: 17px;
+	}
+	.modal_add_to_cart button {
+		margin-left: 10px;
+		padding: 15px 20px;
+	}
+	.login-register-form-full {
+		padding: 30px 15px;
+	}
+	.login-register-form-full .row .col-6 {
+		width: 100%;
+	}
+	.login-register-form-full .row .col-6.text-right {
+		text-align: left;
+		margin-bottom: 20px;
+	}
+	.about-content p.active {
+		padding: 15px 15px;
+	}
+	.cart-update-option .cart-update {
+		margin-top: 16px;
+	}
+	.apply-coupon-wrapper .button-1 {
+		margin-top: 20px;
+	}
+	.apply-coupon-wrapper input {
+		width: 100%;
+		margin-top: 20px;
+	}
+
+}

@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+            <!-- Register -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Logo -->
+                    <!--<div class="app-brand justify-content-center">
+        <a href="index.html" class="app-brand-link gap-2">
+
+            <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+        </a>
+    </div>-->
+                    <!-- /Logo -->
+                    <h4 class="mb-2">Xin chào đến với trang quản trị viên</h4>
+                    <p class="mb-4">Xin vui lòng đăng nhập vào tài khoản của bạn để có thể sử dụng trang quản trị vi</p>
+                    <h4 style="color:chartreuse;">@ViewBag.ThongBao</h4>
+                    <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Tên tài khoản</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   name="UserAdmin"
+                                   placeholder="Nhập tên tài khoản của bạn"
+                                   autofocus />
+                            <span style="color:red;">@ViewData["Loi1"]</span>
+                        </div>
+                        <div class="mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="password">Mật khẩu</label>
+                                <a href="auth-forgot-password-basic.html">
+                                    <small>Forgot Password?</small>
+                                </a>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="password"
+                                       id="password"
+                                       class="form-control"
+                                      name="PassAdmin"
+                                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                       aria-describedby="password" />
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                <span style="color:blue"> @ViewData["Loi2"]</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">Đăng nhập</button>
+                        </div>
+                    </form>
+
+                    <p class="text-center">
+                        <span>Nếu như chưa tài khoản thì xin vui lòng</span>
+                        <a href="@Url.Action("DangKy","NguoiDung")">Đăng ký</a>
+                       
+                    </p>
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>
+
+}
+
+<!-- Start Login Register Form -->
+@*@using (Html.BeginForm())
+{
+    <div class="login-register-form pt-70 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="login-register-form-full">
+                        <h3>Login</h3>
+                        <h4>Xin vui lòng nhập UserName và Pass</h4>
+                        <h4 style="color:chartreuse;">@ViewBag.ThongBao</h4>
+
+                        <form action="#">
+                            <input type="text" class="form-control" name="UserAdmin" placeholder="Tài Khoản">
+                            <span style="color:red;">@ViewData["Loi1"]</span>
+                            <input type="password" class="form-control" name="PassAdmin" placeholder="Password">
+                            <span style="color:blue"> @ViewData["Loi2"]</span>
+
+                            <button class="button-1" type="submit">Đăng nhập</button>
+                        </form>
+                        <p>Nếu như có tài khoản thì <a href="@Url.Action("DangKy","NguoiDung")">Dăng ký</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}*@
+<!-- End Login Register Form -->

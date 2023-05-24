@@ -1,0 +1,34 @@
+﻿@using BookStore.Models;
+@model List<GioHang>
+
+
+<div class="mini-cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="counter">@ViewBag.Tongsoluong</span>
+    <span class="counter-cart">
+        <a href="@Url.Action("GioHang", "GioHang")">
+            <small>
+                Giỏ hảng
+            </small>
+        </a>
+    </span>
+    <!-- Mini Cart Content -->
+    <div class="minicart-content-wrapper">
+        <ul class="cart-list-full">
+            <!-- Single -->
+            <li class="cart-list-single">
+                <img src="~/Content/img/@ViewBag.sAnhbia" alt="@ViewBag.STemSach" style="width:40%;">
+                <h5><a href="#">@ViewBag.sTensach</a></h5>
+                <span class="price">@ViewBag.dDongia</span>
+                <div class="close"><i class="fas fa-times"></i></div>
+            </li>
+
+
+        </ul>
+        <h2 class="subtotal">Tạm tính<span>@ViewBag.Tongtien</span></h2>
+        <div class="minicart-btn">
+            <a class="button-1" href="@Url.Action("GioHang","GioHang")">Xem giỏ hàng</a>
+          
+        </div>
+    </div>
+</div>

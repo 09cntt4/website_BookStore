@@ -1,0 +1,35 @@
+﻿
+@using BookStore.Models;
+@model List<SACH>
+
+
+
+@{foreach (var item in Model)
+    {
+        <!-- Single -->
+        <div class="product-single product-style-1">
+            <div class="sale-badge"><span>sale</span></div>
+            <div class="product-thumbnail">
+                <a href="@Url.Action("XemChiTietsp", "BookStore", new {Masach=item.Masach})">
+                    <img src="~/Content/img/@item.Anhbia" alt="@item.Tensach">
+                    <img src="~/Content/img/@item.Anhbia" alt="@item.Tensach">
+                </a>
+            </div>
+
+            <div class="product-content">
+                <h4><a href="@Url.Action("XemChiTietsp", "BookStore", new {Masach=item.Masach})">@item.Tensach</a></h4>
+                
+                <div class="pricing">
+                    <span>@item.Giaban</span>
+                </div>
+                
+               
+            </div>
+        </div>
+
+
+
+
+    }
+}
+

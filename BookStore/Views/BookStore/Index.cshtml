@@ -1,0 +1,255 @@
+﻿@using BookStore.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<!-- Start Hero Area -->
+<section class="hero-area">
+    <div class="hero-area-full owl-carousel">
+
+        <div class="hero-slider-single" style="background-image:url('../../content/img/fahasa-potico840x320.png');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-slider-single-content">
+                            <h2>Kính gửi<span>30-4 cửa hàng đồng loạt giảm giá</span></h2>
+
+                            <a class="button-1" href="shop.html">Shop Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-single" style="background-image: url('../../content/img/daile_mainbanner_slide_840x320.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-slider-single-content">
+                            <h2>Kính gửi<span>30-4 cửa hàng đồng loạt giảm giá</span></h2>
+
+                            <a class="button-1" href="shop.html">Shop Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-single" style=" background-image: url('../../content/img/fhsxpnj840x320.png');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-slider-single-content">
+                            <h2>Kính gửi<span>30-4 cửa hàng đồng loạt giảm giá</span></h2>
+
+                            <a class="button-1" href="shop.html">Shop Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-single" style="background-image: url('../../content/img/msat_mainbanner-t5.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-slider-single-content">
+                            <h2>Kính gửi<span>30-4 cửa hàng đồng loạt giảm giá</span></h2>
+
+                            <a class="button-1" href="shop.html">Shop Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+<!-- End Hero Area -->
+<!-- Start Product Style -->
+<section class="pb-50 pt-50">
+    <div class="container">
+        <div class="row">
+
+            <div class="product-tab-style product-tab-style-1">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="deal-title">Sản Phẩm nổi bật</h3>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link active" id="popular1-tab" data-bs-toggle="tab" data-bs-target="#popular1" role="tab" aria-controls="popular1" aria-selected="true">Phổ biến</span>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link" id="bastsaller1-tab" data-bs-toggle="tab" data-bs-target="#bastsaller1" role="tab" aria-controls="bastsaller1" aria-selected="false">Tốt nhất</span>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link" id="featured1-tab" data-bs-toggle="tab" data-bs-target="#featured1" role="tab" aria-controls="featured1" aria-selected="false">Đặc sắc</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content product-tab-full" id="myTabContent">
+                    <div class="tab-pane product-tab-item fade show active" id="popular1" role="tabpanel" aria-labelledby="popular1-tab">
+                        <div class="product-tab-slider-full owl-carousel">
+                            @Html.Action("SanPhamnoibat", "BookStore")
+                            <!-- Single -->
+                        </div>
+                    </div>
+                    <div class="tab-pane product-tab-item fade" id="bastsaller1" role="tabpanel" aria-labelledby="bastsaller1-tab">
+                        <div class="product-tab-slider-full owl-carousel">
+                            <!-- Single -->
+                            @Html.Action("SanPhamtotnhat", "BookStore")
+                        </div>
+                    </div>
+                    <div class="tab-pane product-tab-item fade" id="featured1" role="tabpanel" aria-labelledby="featured1-tab">
+                        <div class="product-tab-slider-full owl-carousel">
+
+                            <!-- Single -->
+                            @Html.Action("SanPhamdacsac", "BookStore")
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Product Style -->
+<!-- Start Sales Banner Area -->
+<div class="sales-banner pt-50 pb-50" style="background-image: url('../../content/assets/img/sale-bnr-large.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="sales-banner-content">
+                    <h3>Tiết kiệm đến <span>75% cho</span> tất cả mặt hàng khi mua lần đầu tiên!</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <a class="button-1 text-right" href="#">Đọc pass:<span style="font-size:10px;"> Nam Khởi đẹp trai để được giảm ngay!</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Sales Banner Area -->
+<!-- Start Our Latest Product -->
+<section class="latest-product pt-70 pb-70">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-headding-1 mb-50">
+                    <h2><span>Sản Phẩm mới nhất</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="latest-product-full owl-carousel">
+                    <!-- Single -->
+                    @Html.Action("SachMoiPartial", "BookStore")
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start Instagram Feed -->
+<div class="instagram-feed">
+    <div class="instagram-feed-full owl-carousel">
+
+        <!-- Single -->
+        <div class="instagram-single">
+            <img src="~/Content/img/dochoigiasoc.jpg" alt="instagram">
+            <div class="instagram-single-overly">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <!-- Single -->
+        <div class="instagram-single">
+            <img src="~/Content/img/BannerBlock09_NgoaiVan_350x415.jpg" alt="instagram">
+            <div class="instagram-single-overly">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <!-- Single -->
+        <div class="instagram-single">
+            <img src="~/Content/img/cuahang.jpg" alt="instagram">
+            <div class="instagram-single-overly">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <!-- Single -->
+        <div class="instagram-single">
+            <img src="~/Content/img/BannerBlock10_KinhTe350x415.jpg" alt="instagram">
+            <div class="instagram-single-overly">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <!-- Single -->
+        <div class="instagram-single">
+            <img src="~/Content/img/BannerBlock10_VanHoc_350x415.jpg" alt="instagram">
+            <div class="instagram-single-overly">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Instagram Feed -->
+<!-- Start Footer Area -->
+<!-- Tạo trang-->
+<span style="margin-left:800px; font-size:20px;">
+    Trang <span style="color:red;">@(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount</span>
+</span>
+
+<div class="center">
+    <div class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+<style>
+
+    .center {
+        margin-left:760px;
+        text-align: center;
+    }
+
+    .pagination {
+        /*display: inline-block;*/
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: yellowgreen;
+            }
+</style>

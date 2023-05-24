@@ -1,0 +1,20 @@
+﻿
+@using BookStore.Models;
+@model List<SACH>
+
+
+@{foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("XemChiTietsp", "BookStore", new {Masach=item.Masach})">
+                <img src="~/Content/img/@item.Anhbia" style="width:40%;" />
+            </a>
+            <a href="@Url.Action("XemChiTietsp", "BookStore", new {Masach=item.Masach})">@item.Tensach</a>
+        </li>
+        
+
+
+
+
+    }
+}

@@ -1,0 +1,67 @@
+﻿@using BookStore.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="cart-table table-responsive">
+            <table class="table table-bordered align-middle text-center">
+
+                <thead>
+                    <tr>
+                        <th class="pro-thumbnail">Hình ảnh</th>
+                        <th class="pro-title">Sản phẩm</th>
+                        <th class="pro-price">Giá</th>
+                        <th class="pro-quantity">Số lượng</th>
+                        <th class="pro-subtotal">Tổng</th>
+                        <th class="pro-subtotal">Chi Tiết</th>
+                        <th class="pro-remove" colspan="2">Chức Năng</th>
+                        <th class="pro-remove" colspan="2">Tổng tiền</th>
+                        <th class="pro-remove"></th>
+
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="~/Content/img/@item.sAnhbia" alt="@item.sTensach"></a></td>
+                            <td class="pro-title"><a href="#">@item.sTensach</a></td>
+                            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMasach = item.iMasach }))
+                            {
+                                <td class="pro-price">
+                                    <span>
+                                        @String.Format("{0:0:0 }", item.dDongia.ToString()) VND
+                                    </span>
+                                </td>
+
+                                <td class="pro-quantity">
+                                    <span class="quantity">
+                                        <input type="number" min="1" max="1000" step="1" value="@item.iSoluong" name="txtSoluong">
+                                    </span>
+                                </td>
+                                <td class="pro-subtotal"><span>@String.Format("{0:0:0 }", item.dDongia)</span></td>
+                                <td><a href="@Url.Action("XemChiTietsp", "BookStore", new { Masach = item.iMasach })">Xem chi Tiết sản phẩm</td>
+                                <td class="pro-remove">@Html.ActionLink("Xóa", "Xoagiohang", new { @iMaSP = item.iMasach })<i class="fas fa-times"></i></td>
+                                <td><input type="submit" value="Cập Nhật" /></td>
+                            }
+                    <td colspan="8">Tổng tiền: <span style="color:red;font-size:20px;">@ViewBag.TongTien</span> VNĐ</td>
+                    <td colspan="8">@Html.ActionLink("Xóa Toàn bộ giỏ hàng", "XoaTatCaGioHang")</td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+
+        </div>
+        <div class="cart-update-option d-block d-md-flex justify-content-between">
+            <div class="cart-update button-1">
+                @Html.ActionLink("Đặt hàng", "DatHang", "GioHang")
+            </div>
+        </div>
+    </div>
+</div>
+
+

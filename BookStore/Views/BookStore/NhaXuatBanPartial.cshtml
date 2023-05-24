@@ -1,0 +1,21 @@
+﻿@model IEnumerable<BookStore.Models.NHAXUATBAN>
+
+
+@{foreach (var item in Model)
+    {
+   
+            
+    <li>
+        <a href="@Url.Action("SPTheoNxb", "BookStore", new {NXB=item.MaNXB})">
+            @item.TenNXB
+
+
+    </a>
+    </li>
+
+
+
+
+    }
+}
+

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+    <h1>@ViewBag.ThongBao</h1>
+    @using (Html.BeginForm())
+    {
+        <div class="login-register-form pt-70 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="login-register-form-full">
+                            <h3>Login</h3>
+                            <form action="#">
+                                <input type="text" class="form-control" name="TenDN" placeholder="Tài Khoản">
+                                @ViewData["Loi1"]
+                                <input type="password" class="form-control" name="Matkhau" placeholder="Password">
+                                @ViewData["Loi2"]
+
+                                <button class="button-1" type="submit">Đăng nhập</button>
+                            </form>
+                            <p>Nếu như có tài khoản thì <a href="@Url.Action("DangKy","NguoiDung")">Dăng ký</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @*{
+        <span>Tài khoản: </span>
+        <br />
+        @Html.TextBox("TenDN");
+        @ViewData["Loi1"]
+        <br />
+        <span>Mật Khẩu: </span>
+        <br />
+        @Html.Password("Matkhau");
+
+        <br />
+        <input type="Submit" value="Đăng nhập" />
+
+
+            }
+        </div>*@
